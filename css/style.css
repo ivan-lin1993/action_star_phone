@@ -1,5 +1,5 @@
 *{
-/*   border: 1px solid black; */
+   /*border: 1px solid black; */
 }
 body,html{
   padding: 5px;
@@ -43,5 +43,29 @@ input[type=radio]{
   margin: 5px;
   padding: 15px;
   border: 1px solid #ccc;
-  border-radius: 5px; 
+  border-radius: 5px;
+}
+.card .name{
+  width:100px;
+  margin-top: 10px;
+  text-align: center;
+}
+.card .photo{
+  height: 100px;
+  width: 100px;
+}
+.card .info{
+  position: absolute;
+  top: 15px;
+  left: 130px;
+  line-height: 150%;
+}
+.card .bottom{
+  margin-top: 20px;
+  display: flex;
+  justify-content:center;
+}
+.card .btn{
+  padding: 5px 15px;
+  margin-right: 10px;
 }
