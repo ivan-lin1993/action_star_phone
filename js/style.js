@@ -20,11 +20,11 @@ function getPerson(id){
     		$(".content").append(
     		// "<div class='card' onclick='showCard("+i+");'>" +
     		"<div class='card'>" +
-    			"<img class='photo' src="+ result[i]["photoUrl"] +">" +
+    			"<img class='img-responsive img-thumbnail' src="+ result[i]["photoUrl"] +">" +
     			"<div class='name'>" + result[i]["name"] + "</div>"+
     			"<div class='bottom'>"+
-    				"<a href='tel:" + result[i]["phone"] + "' class='btn btn-success'>" + "打電話" + "</a>"+
-    				"<a href='mailto:" + result[i]["email"] + "' class='btn btn-success'>" + "Email" + "</a>"+
+    				"<a href='tel:" + result[i]["phone"] + "' class='btn btn-success btn-md'>" + "打電話" + "</a>"+
+    				"<a href='mailto:" + result[i]["email"] + "' class='btn btn-info btn-md'>" + "Email" + "</a>"+
     			"</div>"+
     			"<div class='info'>"+
     				"職位: " + result[i]["title"] + "<br>"+
