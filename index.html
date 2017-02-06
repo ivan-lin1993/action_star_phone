@@ -1,28 +1,40 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title></title>
-<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=0">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<!-- <script src="js/bootstrap.min.js"></script> -->
-<script src="js/style.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<!-- <link href="css/bootstrap.min.css" rel="stylesheet" media="screen"> -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link href="css/style.css" rel="stylesheet" media="screen">
+<html lang="zh-TW">
+	<head>
+	<title>師大學務處聯絡資料</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+	<script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"></link>
+	
 
 
-
+	<link href="css/style.css" rel="stylesheet" media="screen">
 
 
 </head>
 <body>
-	<div class="searchbar">
-		<span>快速搜尋</span>
-		<input id="search" type="text" />
-	</div>
-	<div class="tag-list">
+	
+	<main>
+		<div class="container" id="search">
+			<div class="input-group searchbar">
+    			<input type="text" class="form-control" id="search">
+    			<span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+  			</div>
+		</div>
+
+
+		<div class="container" id="result">
+			<div class="tag-list">
 		<div class="tag first" onclick='getPerson(0);'>學務長室</div>
 		<div class="tag" onclick='getPerson(1);'>課外輔導組</div>
 		<div class="tag" onclick='getPerson(2);'>生活輔導組</div>
@@ -53,5 +65,10 @@
       
     </div>
   </div>
+		</div>
+	</main>
+	
+
+	
 
 </body>
