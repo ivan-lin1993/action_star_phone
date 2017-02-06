@@ -1,23 +1,8 @@
-*{
-   /*border: 1px solid black; */
+.container{
+  width: 100%;
+  padding: 5%;
 }
-body,html{
-  padding: 5px;
-  margin: 0px;
-  position: relative;
-}
-.searchbar{
-  position: relative;
-}
-#search {
-/*   display: block; */
-  background-repeat: no-repeat;
-  width: 40%;
-  font-size: 16px;
-  padding: 5px;
-  border: 1px solid #ddd;
-  margin-bottom: 12px;
-}
+
 .tag{
   background: #ccc;
   border:1px solid #999;
