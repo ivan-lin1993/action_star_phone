@@ -20,7 +20,7 @@ function getPerson(id){
     		$(".content").append(
     		// "<div class='card' onclick='showCard("+i+");'>" +
     		"<div class='card'>" +
-    			"<img class='img-responsive img-thumbnail' src="+ result[i]["photoUrl"] +">" +
+    			"<img class='img-thumbnail' src="+ result[i]["photoUrl"] +">" +
     			"<div class='name'>" + result[i]["name"] + "</div>"+
     			"<div class='bottom'>"+
     				"<a href='tel:" + result[i]["phone"] + "' class='btn btn-success btn-md'>" + "打電話" + "</a>"+
