@@ -15,6 +15,20 @@
 .tag.first{
   margin-left:0px;
 }
+
+.input-group{
+  width: 100%;
+}
+
+/*TODO */
+/*#search{
+   -webkit-width: 70%;
+}
+button.input-group-addon{
+  -webkit-width: 30%;
+  -webkit-height: 34px;
+}*/
+
 input[type=radio]{
   position: absolute;
   visibility: hidden;
