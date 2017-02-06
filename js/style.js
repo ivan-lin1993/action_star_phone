@@ -41,6 +41,7 @@ function getPerson(id){
 $(document).ready(function(){
 	getPerson(0);
 });
+//TODO
 // function showCard(i){
 // 	alert(("#pname").html());
 // 	$("#pname").innerHTML=personList[i]["name"];
