@@ -52,6 +52,9 @@ function getPerson(id){
     	
     });
 }
+function changeOffice(){
+    getPerson($("#selector").val());
+}
 $(document).ready(function(){
 
 	getPerson(0);

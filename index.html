@@ -49,16 +49,17 @@
 		<div class="container" id="result">
 			<div class="row">
 				<div class="col-md-12 col-xs-12">
-					<ul class="nav nav-tabs">
-                		<li class="active" ><a data-toggle="tab" href=".content" onclick="getPerson(0);">學務長室</a></li>
-                		<li><a data-toggle="tab" href=".content" onclick="javascript:getPerson(1);">課外活動指導組</a></li>
-                		<li><a data-toggle="tab" href=".content" onclick="javascript:getPerson(2);">生活輔導組</a></li>
-                		<li><a data-toggle="tab" href=".content" onclick="javascript:getPerson(3);">學生宿舍管理中心</a></li>
-                		<li><a data-toggle="tab" href=".content" onclick="javascript:getPerson(4);">學生輔導中心</a></li>
-                		<li><a data-toggle="tab" href=".content" onclick="javascript:getPerson(5);">專責導師室</a></li>
-                		<li><a data-toggle="tab" href=".content" onclick="javascript:getPerson(6);">全人教育中心</a></li>
-                		<li><a data-toggle="tab" href=".content" onclick="javascript:getPerson(7);">健康中心</a></li>
-            		</ul>	
+
+			      <select class="form-control" id="selector" onchange="changeOffice();">
+			        <option value="0">學務長室</option>
+			        <option value="1">課外活動指導組</option>
+			        <option value="2">生活輔導組</option>
+			        <option value="3">學生宿舍管理中心</option>
+			        <option value="4">學生輔導中心</option>
+			        <option value="5">專責導師室</option>
+			        <option value="6">全人教育中心</option>
+			        <option value="7">健康中心</option>
+			      </select>
 				</div>
 
 				<div class="col-md-12 col-xs-12" style="padding: 8px 0;"></div>
