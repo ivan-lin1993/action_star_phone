@@ -48,6 +48,7 @@ input[type=radio]{
   padding: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  cursor: pointer;
 }
 .card .name{
   width:100px;

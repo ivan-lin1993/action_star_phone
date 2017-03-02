@@ -1,18 +1,19 @@
 var personList=[];
-function Person(id,department_name,title,name,phone,phoneid,email,photoUrl){
+function Person(id,depart_name,title,name,phone,phoneid,email,business,photoUrl){
 	this.id=id;
-	this.department_name=department_name;
+	this.depart_name=depart_name;
 	this.title=title;
 	this.name=name;
 	this.phone=phone;
 	this.phoneid=phoneid;
 	this.email=email;
 	this.photoUrl=photoUrl;
+    this.business=business;
 }
 function appendHTML(object){
     $(".content").append(
     // "<div class='card' onclick='showCard("+i+");'>" +
-    "<div class='card'>" +
+    "<div class='card' onclick='loadModal("+ object["id"] +");'>" +
         "<img class='photo img-thumbnail' src="+ object["photoUrl"] +">" +
         "<div class='name'>" + object["name"] + "</div>"+
         "<div class='bottom'>"+
@@ -20,7 +21,7 @@ function appendHTML(object){
             "<a href='mailto:" + object["email"] + "' class='btn btn-info btn-md'>" + "Email" + "</a>"+
         "</div>"+
         "<div class='info'>"+
-            "職位: " + object["title"] + "<br>"+
+            "職位: " + object["depart_name"] + "-" + object["title"] + "<br>"+
             "電話: " + object["phone"] + "<br>"+
             "分機: " + object["phoneid"] + "<br>"+
             "Email: " + object["email"] + "<br>"+
@@ -28,44 +29,52 @@ function appendHTML(object){
     "</div>"
     );
 }
+function pushPersonList(result){
+    personList=[];
+    $(".content").empty();
+    var length=result.length;
+    for(var i=0;i<length;i++){
+        var person=new Person(
+            i,
+            result[i]["depart_name"],
+            result[i]["title"],
+            result[i]["name"],
+            result[i]["phone"],
+            result[i]["phoneid"],
+            result[i]["email"],
+            result[i]["business"],
+            result[i]["photoUrl"]);
+        personList.push(person);
+        appendHTML(person);
+    }
+}
 function search(keyword){
     $.getJSON("php/search.php?keyword="+keyword, function(result){
-        var length=result.length;
-        for(var i=0;i<length;i++){
-            var person=new Person(result[i]["id"],result[i]["department_name"],result[i]["title"],result[i]["name"],result[i]["phone"],result[i]["phoneid"],result[i]["email"],result[i]["photoUrl"]);
-            personList.push(person);
-            appendHTML(result[i]);
-        }
-        
+        pushPersonList(result);
     });
 }
-function getPerson(id){
-	personList=[];
-	$(".content").empty();
+function getOffice(id){
+	
 	$.getJSON("php/phone.php?did="+id, function(result){
-    	var length=result.length;
-    	for(var i=0;i<length;i++){
-    		var person=new Person(result[i]["id"],result[i]["department_name"],result[i]["title"],result[i]["name"],result[i]["phone"],result[i]["phoneid"],result[i]["email"],result[i]["photoUrl"]);
-    		personList.push(person);
-    		appendHTML(result[i]);
-    	}
-    	
+    	pushPersonList(result);
     });
 }
 function changeOffice(){
-    getPerson($("#selector").val());
+    getOffice($("#selector").val());
 }
 $(document).ready(function(){
 
-	getPerson(0);
+	getOffice(0);
     $("#searchBtn").click(function(){
         $(".content").empty();
         search($("#keyword").val());
     });
 });
 //TODO
-// function showCard(i){
-// 	alert(("#pname").html());
-// 	$("#pname").innerHTML=personList[i]["name"];
-// 	$("#personModal").modal();
-// }
+function loadModal(id){
+    $("#modalbody").html("");
+    $("#modalbody").append(personList[id]["business"]);
+
+
+	$("#personModal").modal();
+}
